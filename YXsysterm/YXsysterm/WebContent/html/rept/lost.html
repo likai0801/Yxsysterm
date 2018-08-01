@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/demo/demo.css">
+<script type="text/javascript" src="../script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../script/easyui/jquery.easyui.min.js"></script>
+<script src="../script/common.js"></script>
+</head>
+<body>
+
+<div class="page_title">客户流失分析</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="reload();">查询</button> 
+	<button class="common_button">
+				清空
+    </button>
+	<button class="common_button">本年度统计图</button> 
+	<button class="common_button">以前年度统计图</button> 
+	</div>
+	<table class="query_form_table">
+	<tr>
+		<th width="15%">客户名称</th>
+		<td width="18%"><input /></td>
+		<th width="10%">联系人</th>
+		<td width="24%"><input /></td>
+		<th width="15%">联系电话</th>
+		<td width="18%"><input /></td>
+	</tr>
+	<tr>
+		<th width="15%">客户经理</th>
+		<td width="18%"><input /></td>
+		<th width="10%">确认流失时间</th>
+		<td width="24%" colspan="3">
+		    <input class="easyui-datebox">
+			</input> 
+		    &nbsp;至&nbsp;
+			<input class="easyui-datebox">
+			</input> 
+		</td>
+	</tr>
+	</table>
+<br />
+<table class="data_list_table">
+	<tr>
+		<th height="28">编号</th>
+		<th height="28">流失时间</th>
+		<th height="28">客户名称</th>
+		<th height="28">联系人</th>
+		<th height="28">联系电话</th>
+		<th height="28">客户经理</th>
+		<th height="28">流失原因</th>
+	</tr>
+	<tr>
+		<td class="list_data_number" height="27">1</td>
+		<td class="list_data_text" height="27">2006-11-12</td>
+		<td class="list_data_text" height="27">大空纶纺</td>
+		<td class="list_data_text" height="27">刘华</td>
+		<td class="list_data_text" height="27">13955995555</td>
+		<td class="list_data_text" height="27">小满</td>
+		<td class="list_data_ltext" height="27">客户厂址迁移</td>
+	</tr>
+	<tr>
+		<td class="list_data_number">2</td>
+		<td class="list_data_text">2006-11-12</td>
+		<td class="list_data_text">星星广告</td>
+		<td class="list_data_text" height="27">郑重</td>
+		<td class="list_data_text" height="27">15855995555</td>
+		<td class="list_data_text">郭小美</td>
+		<td class="list_data_ltext">客户公司被收购</td>
+	</tr>
+	<tr>
+		<td class="list_data_number">3</td>
+		<td class="list_data_text">2006-11-12</td>
+		<td class="list_data_text">和满记餐饮</td>
+		<td class="list_data_text" height="27">孙鲁</td>
+		<td class="list_data_text" height="27">15955995555</td>
+		<td class="list_data_text">周结论</td>
+		<td class="list_data_ltext">没有采购需求</td>
+	</tr>
+	<tr>
+		<th colspan="9" class="pager">
+<div class="pager">
+	共59条记录&nbsp;每页10条&nbsp;
+	第1页&nbsp;/&nbsp;共5页&nbsp;
+	<a href="#">第一页</a>&nbsp;
+	<a href="#">上一页</a>&nbsp;
+	<a href="#">下一页</a>&nbsp;
+	<a href="#">最后一页</a>&nbsp;
+	转到<input value="1" size="2" />页&nbsp;
+	<button width="20">GO</button>
+</div>
+		</th>
+	</tr>
+
+	</table>
+</body>
+</html>

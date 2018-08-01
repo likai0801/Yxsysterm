@@ -1,0 +1,115 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>客户关系管理系统——查询角色</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">	
+                <script src="../script/common.js"></script>	
+	</head>
+	<body>
+		<div class="page_title">
+			权限管理 &gt; 角色管理 &gt; 查询角色
+			<span id="remoteServerMessage" style="background-color:#008040; color:#FFFFFF;margin-left:6px;"></span>
+		</div>
+		<div class="button_bar">
+			<button class="common_button">
+				帮助
+			</button>
+			<button class="common_button" onClick="to('role_add.html');">
+				新建
+			</button>
+			<button class="common_button">
+				查询
+			</button>
+			<button class="common_button">
+				清空
+			</button>
+		</div>
+		<form name="role_list_form" method="post">
+			<table class="query_form_table">
+				<tr>
+					<th>
+						角色名称
+					</th>
+					<td>
+						<input type="text" name="roleName" />
+					</td>
+					<th>
+						状态
+					</th>
+					<td>
+						<select>
+                            <option>---全部---</option>
+							<option>正常</option>
+                            <option>停用</option>
+                        </select>
+					</td>
+				</tr>
+			</table>
+		</s:form>
+		<br />
+		<table class="data_list_table">
+			<tr>
+				<th>
+					序号
+				</th>
+				<th>
+					角色名称
+				</th>
+				<th>
+					角色描述
+				</th>
+				<th>
+					注册时间
+				</th>
+				<th>
+					状态
+				</th>
+				<th>
+					操作
+				</th>
+			</tr>	
+				<tr>
+					<td class="list_data_number">
+						001
+					</td>
+					<td class="list_data_ltext">
+						管理员
+					</td>
+					<td class="list_data_text">
+						系统管理
+					</td>
+					<td>
+						2012-01-01
+					</td>
+					<td class="list_data_text">
+						正常
+					</td>
+					<td class="list_data_op">
+					   
+					  <img title="编辑角色" src="../images/bt_edit.gif" class="op_button" onClick="to('role_edit.html');"/>
+					  <img title="分配权限" src="../images/bt_feedback.gif" class="op_button" onClick="to('assign_rights.html');"/>
+					  <img title="删除" class="op_button" src="../images/bt_del.gif" />
+						
+					</td>
+				</tr>
+			
+			<form name="role_list_form" method="post">
+				<tr>
+		                  <th colspan="100" class="pager">
+                                     <div class="pager">
+	                               共59条记录&nbsp;每页10条&nbsp;
+	第1页&nbsp;/&nbsp;共5页&nbsp;
+	<a href="#">第一页</a>&nbsp;
+	<a href="#">上一页</a>&nbsp;
+	<a href="#">下一页</a>&nbsp;
+	<a href="#">最后一页</a>&nbsp;
+	转到<input value="1" size="2" />页&nbsp;
+	<button width="20">GO</button>
+                                    </div>
+		                 </th>
+	                       </tr>
+			</form>
+		</table>
+	</body>
+</html>

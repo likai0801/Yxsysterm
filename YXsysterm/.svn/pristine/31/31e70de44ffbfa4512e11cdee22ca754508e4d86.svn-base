@@ -1,0 +1,196 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>客户关系管理系统——分配权限</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+                <script src="../script/common.js"></script>
+		<script type="text/javascript">
+		  function rst(){//重置
+		      document.forms[0].reset();
+		  }
+		  function save(){//保存
+		     
+		  }
+		</script>
+		<script type="text/javascript">
+		  function checkedAll(rightId){//控制选择复选框
+			  var code=rightId.substring(0,3);  //截取父菜单	 
+			  var menu=document.getElementById(code);     //获得父级菜单对象
+	          var rightValue=document.getElementsByName("roleRright"); //获得所有的权限复选框
+			  if(rightId==code){//选择的是父级菜单   
+				   if(menu.checked==false){//全不选	   
+					      for(var i=0;i<rightValue.length;i++){      
+					        var rId= rightValue[i].value.substring(0,3);
+					        if(rId==code){
+					          document.getElementById(rightValue[i].value).checked=false;
+					          continue;
+					        }
+					     }
+				   }else{//全选
+				      for(var i=0;i<rightValue.length;i++){ 
+					        var rId= rightValue[i].value.substring(0,3);
+					        if(rId==code){
+				               document.getElementById(rightValue[i].value).checked=true;
+				               continue;
+				            }
+					  }
+				   }
+			  }else{//选择的是子级菜单
+			    if(menu.checked==false){
+			       	menu.checked=true;  //选中父级菜单
+			    }else{
+			    	var temp1 = 0;
+			    	var temp2 = 0;
+				    for(var i=0;i<rightValue.length;i++){  //循环计算此节点的个数
+				          var rId= rightValue[i].value.substring(0,3);
+				          if(rId!=code){
+				              continue;	               
+				          }
+				          temp1++;
+				     }
+				     for(var i=0;i<rightValue.length;i++){  //循环判断复选框有没有选中，并计算没有选中数量
+				          var rId= rightValue[i].value.substring(0,3);
+				          if(rId==code){
+				               if(document.getElementById(rightValue[i].value).checked==false){
+				                  temp2++;
+				                  continue;	    
+				               }       
+				          }
+				     }
+				     //判断父节点是否选中
+				     if((temp1-1)==(temp2)){
+				     	document.getElementById(code).checked=false;
+				     }
+				  }
+			  }
+		  }
+		</script>
+	</head>
+
+	<body>
+		<div class="page_title">
+			权限管理 &gt; 角色管理 &gt; 查询角色 &gt; 分配权限
+		</div>
+		<div class="button_bar">
+			<button class="common_button" onClick="location.href='/crm/help.html'">
+				帮助
+			</button>
+			<button class="common_button" onClick="history.go(-1);">
+				返回
+			</button>
+			<button class="common_button" onClick="rst();">
+				重置
+			</button>
+			<button class="common_button" onClick="save();">
+				保存
+			</button>
+		</div>
+		<table class="query_form_table">
+			<tr>
+				<th>
+					角色名称
+				</th>
+				<td>
+				       管理员
+				</td>
+				<th>
+					角色状态
+				</th>
+				<td>
+					正常
+				</td>
+				<th>
+					角色描述
+				</th>
+				<td>
+					系统管理
+				</td>
+			</tr>
+		</table>
+		<br />
+		<table class="data_list_table" id="table1">
+	<tr>
+		<th width="150px">二级菜单</th>
+		<th height="31">权限</th>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		   <input type="checkbox" value="营销管理" />营销管理
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="销售机会管理" />销售机会管理&nbsp;
+		  <input type="checkbox" value="客户开发计划" />客户开发计划&nbsp;
+		  <input type="checkbox" value="业务移交" />业务移交&nbsp;
+		  <input type="checkbox" value="移交审批" />移交审批
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		<input type="checkbox" value="客户管理" />客户管理
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="客户信息管理" />客户信息管理&nbsp;
+		  <input type="checkbox" value="客户流失管理" />客户流失管理&nbsp;
+		  <input type="checkbox" value="业务移交" />业务移交&nbsp;
+		  <input type="checkbox" value="移交审批" />移交审批
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		<input type="checkbox" value="服务管理" />服务管理
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="服务创建" />服务创建&nbsp;
+		  <input type="checkbox" value="服务分配" />服务分配&nbsp;
+		  <input type="checkbox" value="服务处理" />服务处理&nbsp;
+		  <input type="checkbox" value="服务反馈" />服务反馈&nbsp;
+		  <input type="checkbox" value="服务归档" />服务归档&nbsp;
+		  <input type="checkbox" value="业务移交" />业务移交&nbsp;
+		  <input type="checkbox" value="移交审批" />移交审批
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		<input type="checkbox" value="统计报表" />统计报表
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="客户贡献分析" />客户贡献分析&nbsp;
+		  <input type="checkbox" value="客户构成分析" />客户构成分析&nbsp;
+		  <input type="checkbox" value="客户服务分析" />客户服务分析&nbsp;
+		  <input type="checkbox" value="客户流失分析" />客户流失分析&nbsp;
+		  <input type="checkbox" value="销售机会分析" />销售机会分析&nbsp;
+		  <input type="checkbox" value="工作绩效分析" />工作绩效分析
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		<input type="checkbox" value="基础数据" />基础数据
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="数据字典管理" />数据字典管理&nbsp;
+		  <input type="checkbox" value="查询产品信息" />查询产品信息&nbsp;
+		  <input type="checkbox" value="查询库存" />查询库存
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		<input type="checkbox" value="权限管理" />权限管理
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="角色管理" />角色管理&nbsp;
+		  <input type="checkbox" value="用户管理" />用户管理
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_text" height="24">
+		<input type="checkbox" value="日志管理" />日志管理
+		</td>
+		<td class="list_data_ltext" height="24">
+		  <input type="checkbox" value="登录日志管理" />登录日志管理&nbsp;
+		  <input type="checkbox" value="操作日志管理" />操作日志管理
+		</td>
+	</tr>
+</table>
+	</body>
+</html>

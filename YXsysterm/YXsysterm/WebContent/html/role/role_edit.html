@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>客户关系管理系统——编辑角色</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<script src="../script/common.js"></script>
+	</head>
+
+	<body>
+		<div class="page_title">
+			权限管理 &gt; 角色管理 &gt; 查询角色 &gt; 编辑角色
+			<span id="remoteServerMessage"
+				style="background-color: #008040; color: #FFFFFF; margin-left: 6px;"></span>
+		</div>
+		<div class="button_bar">
+			<button class="common_button" onClick="help('')">
+				帮助
+			</button>
+			<button class="common_button" onClick="back()">
+				返回
+			</button>
+			<button class="common_button" onClick="rst()">
+				重置
+			</button>
+			<button class="common_button" id="btnSave">
+				保存
+			</button>
+		</div>
+		<form id="role_edit_form" name="role_edit_form">
+			<table class="query_form_table">
+				<tr>
+					<th>
+						编号
+					</th>
+					<td>
+						<input type="text" name="roleItem.roleId" readonly="true"
+							cssStyle="background-color:#D6D6D6" id="roleId" />
+						<span class="red_star">*</span>
+					</td>
+					<th>
+						角色名
+					</th>
+					<td>
+						<input type="text" name="roleItem.roleName" readonly="true"
+							cssStyle="background-color:#D6D6D6" id="roleName"/>
+						<span class="red_star">*</span>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						角色状态
+					</th>
+					<td>
+						<input type="radio" />正常
+                        <input type="radio" />停用
+						<span class="red_star" id="flagerror">*</span>
+					</td>
+					<th>
+						注册时间
+                          <input type="text" name="roleItem.date" readonly="true"
+							cssStyle="background-color:#D6D6D6" id="roledate"/>
+					</th>
+					<td>
+					   
+					</td>
+				</tr>
+				<tr>
+					<th>
+						角色描述
+					</th>
+					<td colspan="3">
+						<textarea name="roleItem.roleDesc" rows="5" cols="106" id="roleDesc"></textarea>
+                        <span id="derror">(50个字以内)</span>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

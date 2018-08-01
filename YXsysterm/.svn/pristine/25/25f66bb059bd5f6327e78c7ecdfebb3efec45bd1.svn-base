@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<script src="../../script/common.js"></script>
+</head>
+<body>
+
+<div class="page_title">客户流失管理 > 客户信息</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="to('../cust/linkman.html');">联系人</button>
+	<button class="common_button" onClick="to('../cust/activities.html');">交往记录</button>
+	<button class="common_button" onClick="to('../cust/orders.html');">历史订单</button>
+	
+	<button class="common_button" onClick="back();">返回</button>
+</div>
+<table class="query_form_table">
+	<tr>
+		<th>客户编号</th>
+		<td>KH071202001</td>
+		<th>名称</th>
+		<td>北京聪海信息科技有限公司</td>
+	</tr>
+	<tr>
+		<th>地区</th>
+		<td>
+			华北
+		</td>
+		<th>客户经理</th>
+		<td>
+			小明
+		</td>
+	</tr>	
+	<tr>
+		<th>客户等级</th>
+		<td>
+			合作伙伴
+		</td>
+		<th>　</th>
+		<td>　</td>
+	</tr>
+	<tr>
+		<th>客户满意度</th>
+		<td>
+		   ☆☆☆☆☆
+		</td>
+		<th>客户信用度</th>
+		<td>
+		   ☆☆☆☆
+		</td>
+	</tr>
+</table>
+<br />
+<table class="query_form_table" id="table1">
+	<tr>
+		<th>地址</th>
+		<td>北京市海淀区成府路70号
+		</td>
+		<th>邮政编码</th>
+		<td>100027</td>
+	</tr>
+	<tr>
+		<th>电话</th>
+		<td>
+			010-62283393</td>
+		<th>传真</th>
+		<td>
+			010-62283396
+		</td>
+	</tr>	
+	<tr>
+		<th>网址</th>
+		<td>
+			www.conghai.com
+		</td>
+		<th>　</th>
+		<td>　</td>
+	</tr>
+</table>
+<br />
+<table class="query_form_table" id="table2">
+	<tr>
+		<th>营业执照注册号</th>
+		<td></td>
+		<th>法人</th>
+		<td>聪颖
+		</td>
+	</tr>
+	<tr>
+		<th>注册资金（万元）</th>
+		<td>
+			500
+		</td>
+		<th>年营业额</th>
+		<td>
+			2000000
+		</td>
+	</tr>	
+	<tr>
+		<th>开户银行</th>
+		<td>
+			北京银行 中关村支行
+		</td>
+		<th>银行帐号</th>
+		<td>62258827238382838</td>
+	</tr>
+	<tr>
+		<th>地税登记号</th>
+		<td>
+		</td>
+		<th>国税登记号</th>
+		<td></td>
+	</tr>
+</table>
+<p>　</p>
+</body>
+</html>

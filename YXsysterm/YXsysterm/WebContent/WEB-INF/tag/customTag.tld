@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>customTag</short-name>
+ <uri>http://www.huayu.edu</uri>
+ <tag>
+    <description>通用分页标签</description>
+    <name>pager</name> 
+    <tag-class>com.commons.util.PagerTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>currentPage</name>
+      <description>当前页码</description>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue> 
+    </attribute>
+    <attribute>
+      <name>rowCount</name>
+      <description>总记录数</description>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>rowPerPage</name>
+      <description>每页记录数</description>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>url</name>
+      <description>提交地址</description>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

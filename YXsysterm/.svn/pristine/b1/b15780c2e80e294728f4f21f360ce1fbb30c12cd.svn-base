@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/demo/demo.css">
+<script type="text/javascript" src="../script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../script/easyui/jquery.easyui.min.js"></script>
+<script src="../script/common.js"></script>
+</head>
+<body>
+
+<div class="page_title">操作日志管理</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="reload();">查询</button> 
+	<button class="common_button">
+				清空
+	</button>
+	</div>
+	<table class="query_form_table">
+	<tr>
+		<th width="15%">用户名</th>
+		<td width="18%"><input /></td>
+		<th width="10%">操作时间</th>
+		<td width="24%" colspan="3">
+		    <input class="easyui-datebox">
+			</input> 
+		    &nbsp;至&nbsp;
+			<input class="easyui-datebox">
+			</input> 
+		</td>
+	</tr>
+	</table>
+<br />
+<table class="data_list_table">
+	<tr>
+		<th height="28">编号</th>
+		<th height="28">用户名</th>
+		<th height="28">操作时间</th>
+		<th height="28">一级菜单</th>
+		<th height="28">二级菜单</th>
+		<th height="28">操作内容</th>
+	</tr>
+	<tr>
+		<td class="list_data_number" height="27">1</td>
+		<td class="list_data_text" height="27">张三</td>
+		<td class="list_data_text" height="27">2006-11-12</td>
+		<td class="list_data_text" height="27">营销管理</td>
+		<td class="list_data_text" height="27">销售机会管理</td>
+		<td class="list_data_text" height="27">新建</td>
+	</tr>
+	<tr>
+		<td class="list_data_number">2</td>
+		<td class="list_data_text">李四</td>
+		<td class="list_data_text">2006-11-12</td>
+		<td class="list_data_text" height="27">客户管理</td>
+		<td class="list_data_text" height="27">客户信息管理</td>
+		<td class="list_data_text" height="27">修改</td>	
+	</tr>
+	<tr>
+		<td class="list_data_number">3</td>
+		<td class="list_data_text">王五</td>
+		<td class="list_data_text">2006-11-11</td>
+		<td class="list_data_text" height="27">客户管理</td>
+		<td class="list_data_text" height="27">移交审批</td>
+		<td class="list_data_text" height="27">审批通过</td>		
+	</tr>
+	<tr>
+		<th colspan="6" class="pager">
+<div class="pager">
+	共59条记录&nbsp;每页10条&nbsp;
+	第1页/共5页&nbsp;
+	<a href="#">第一页</a>
+	<a href="#">上一页</a>
+	<a href="#">下一页</a>
+	<a href="#">最后一页</a>
+	转到<input value="1" size="2" />页&nbsp;
+	<button width="20">GO</button>
+</div>
+		</th>
+	</tr>
+
+	</table>
+</body>
+</html>

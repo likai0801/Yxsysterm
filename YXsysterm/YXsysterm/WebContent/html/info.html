@@ -1,0 +1,100 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="script/easyui/demo/demo.css">
+<script type="text/javascript" src="script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="script/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="script/lhgDialog/lhgcore.lhgdialog.min.js"></script>
+<script src="script/common.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#rePwd').click(function(){
+	    $.dialog({
+	       title:'修改密码',
+	       lock: true,
+	       max: false,
+	       min: false,
+           content: "<table align='center' cellspacing='10px' cellpadding='10px'>"
+                    +"<tr><td>请输入新密码:</td><td><input type='text' id='newPwd' /></td></tr>"
+	                +"<tr><td>请再次输入:</td><td><input type='text' id='rePwd' /></td></tr></table>",
+		   width: '400px',
+           height: '100px',
+		   okVal:'确定',
+           ok: function(){
+              $.get("login.servlet",{action:"updatePwd",newPwd:$("#newPwd").val()}, 
+     		         function(response,status,xhr){
+     		    	     if (response == "success"){
+     		    	    	$.dialog.alert('修改成功!');
+                         }else {
+                        	$.dialog.alert('修改失败!');
+                         }
+     		         }
+     		    );
+              return true; /*如果返回false将阻止对话框关闭*/
+           },
+           cancelVal: '取消',
+           cancel: true /*为true等价于function(){}*/
+        });	
+	});	 
+});
+</script>
+</head>
+<body>
+
+<div class="page_title">个人资料</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="reload();">保存修改</button> 
+	<button class="common_button">
+				取消修改
+	</button>
+	</div>
+<table class="query_form_table">
+	<tr>
+		<th width="15%">姓名</th>
+		<td width="18%"><input type="text" value="张三" /></td>
+		<th width="15%">电话</th>
+		<td width="23%"><input type="text" value="15877745321" /></td>
+		<th width="11%">QQ号</th>
+		<td width="18%">
+			<input type="text" value="45332211" />
+		</td>
+	</tr>
+	<tr>
+		<th>所属部门</th>
+		<td>
+		    市场部
+		</td>
+		<th>职位</th>
+		<td>
+		    客户经理
+		</td>
+		<th>性别</th>
+		<td>
+			<input type="radio" value="男" name="sex" checked="checked" />男
+			<input type="radio" value="女" name="sex" />女
+		</td>
+	</tr>
+	<tr>
+		<th>登录用户名</th>
+		<td>
+		   test
+		</td>
+		<th>登录角色</th>
+		<td>
+		   客户经理
+		</td>
+		<th>登录密码</th>
+		<td>
+			<input type="button" value="修改密码" id="rePwd"/>
+		</td>
+	</tr>
+	</table>
+<br />
+</body>
+</html>

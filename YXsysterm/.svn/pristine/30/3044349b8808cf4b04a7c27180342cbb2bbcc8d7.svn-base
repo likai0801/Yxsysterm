@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/demo/demo.css">
+<script type="text/javascript" src="../script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../script/easyui/jquery.easyui.min.js"></script>
+<script src="../script/common.js"></script>
+</head>
+<body>
+
+<div class="page_title">绩效目标管理&nbsp; &gt; 编辑目标计划</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="back();">返回</button>
+	<button class="common_button" onClick="add('performance_list.html');">保存</button>  
+</div>
+<table class="query_form_table">
+	<tr>
+		<th>目标计划名称</th>
+		<td><input type="text" /><span class="red_star">*</span></td>
+		<th>目标计划类型</th>
+		<td>
+		   <input type="radio" value="年度计划" name="plan"/>年度计划	  
+		   <input type="radio" value="季度计划" name="plan"/>季度计划	  
+		   <input type="radio" value="月度计划" name="plan"/>月度计划	    
+		   <span class="red_star">*</span>
+		</td>
+	</tr>
+	<tr>
+		<th>计划执行时间</th>
+		<td colspan="3">
+		    <input class="easyui-datebox"></input> 
+			&nbsp;至　
+			<input class="easyui-datebox"></input>
+		    <span class="red_star">*</span>
+		</td>
+	</tr>		
+	<tr>
+		<th>计划新增客户量</th>
+		<td>
+		    <input class="easyui-numberspinner" style="width:80px;" 
+                   data-options="editable:true" />
+		</td>
+		<th>计划销售额（单位：万元）</th>
+		<td>
+		    <input class="easyui-numberspinner" style="width:80px;" 
+                   data-options="editable:true" />
+		</td>
+	</tr>
+	<tr>
+		<th>状态</th>
+		<td colspan="3">
+		   <input type="radio" value="启用" name="state"/>启用  
+		   <input type="radio" value="停用" name="state"/>停用  
+		  <span class="red_star">*</span>
+		</td>
+	</tr>
+</table>
+<br />
+<input type="button" value="新增任务指派" class="common_button"/>
+<br /><br />
+<table class="data_list_table">
+	<tr>
+		<th width="6%">员工姓名</th>
+		<th width="16%">客户量</th>
+		<th width="16%">销售额（单位：万元）</th>
+		<th width="14%">操作</th>
+	</tr>
+	<tr>
+		<td class="list_data_number">
+		   <select>
+		       <option>---请选择---</option>
+			   <option>张三</option>
+			   <option>李四</option>
+			   <option>王五</option>
+		   </select>
+		</td>
+		<td class="list_data_text">
+		    <input class="easyui-numberspinner" style="width:80px;" 
+                   data-options="editable:true" />
+		</td>
+		<td class="list_data_ltext">
+		    <input class="easyui-numberspinner" style="width:80px;" 
+                   data-options="editable:true" />
+		</td>
+		<td class="list_data_op">
+		     <input type="button" value="删除" class="common_button"/>		
+		</td>
+	</tr>
+</table>
+<script>
+	setCurTime('t1');
+	setCurTime('t2');
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>客户关系管理系统——新建用户</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link href="../css/style.css" rel="stylesheet" type="text/css">
+		<script src="../script/common.js"></script>	
+		<script type="text/javascript"
+			src="../script/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			$(function(){//添加用户
+			    
+		        
+		        //单击保存按钮事件
+				$("#btnSave").click(function(){
+				    if(checkUname()&&checkUpwd()&&checkRole()){//输入数据合法验证
+						var url = "user_doAdd.action?userItem.usrName="+$("#usrName").val()+"&userItem.usrPassword="+
+						$("#pwd").val()+"&userItem.sysRole.roleId="+$("#role").val()+"&userItem.usrFlag="+$("#user_add_form input[@name=usrFlag]:checked").val()+"&userItem.usrSex="+$("#user_add_form input[@name=usrSex]:checked").val();
+						$.post(url,{},function(data){//提交，post方式
+						    if(data == "添加用户成功!"){
+							   document.forms[0].reset();  
+							   $("#uerror").css({color:""});//清楚样式
+							   uerror.innerHTML="(可为字母、数字)";
+							   $("#remoteServerMessage").html(data);
+							   //清空结果提示
+							   setTimeout(function(){$("#remoteServerMessage").html("");},3000);
+							}else{
+							   $("#remoteServerMessage").html(data);
+							     //清空结果提示
+							   setTimeout(function(){$("#remoteServerMessage").html("");},3000);
+							}
+						});
+					}
+				});
+			
+			
+		    var reg=/^(?:[\u4e00-\u9fa5]*\w*\s*)+$/;//特殊字符串   
+            /**
+             *用户名框失去焦点事件
+             *任务：首先验证输入的合法性，再对用户名进行唯一验证
+             *结果：成功则返回true,失败则返回false
+             */
+            $("#usrName").blur(function checkUname(){
+               var uname =$("#usrName").val();
+			    if(uname==""){
+			        $("#uerror").css({color:"red"});
+			        $("#usrName").css({backgroundColor:"red"});
+	                $("#uerror").html("不能为空!");
+	                $("#usrName").focus();
+			        return false;
+			    }
+			    if(/[^\x00-\xff]/g.test(uname)){
+			        $("#uerror").css({color:"red"});
+			        $("#usrName").css({backgroundColor:"red"});
+	                $("#uerror").html("不能包含中文!");
+	                $("#usrName").focus();
+			        return false;
+			    }
+			    if(!reg.test(uname)){
+				    $("#uerror").css({color:"red"});
+				    $("#usrName").css({backgroundColor:"red"});
+	                $("#uerror").html("不能包含特殊字符!");
+	                $("#usrName").focus();
+					return false;
+				}
+				if(uname.match(/\s/g, " ")){
+				    $("#uerror").css({color:"red"});
+				    $("#usrName").css({backgroundColor:"red"});
+	                $("#uerror").html("不能包含空格!");
+	                $("#usrName").focus();
+					return false;
+				}
+				
+				
+				//合法验证通过后进行用户名是否存在验证
+				var url="user_checkUserExists.action?userItem.usrName="+$("#usrName").val();
+			    $.post(url,{},function(data){//提交
+			        if(data == "已经存在!"){
+					 $("#uerror").css({color:"red"});//设置红色字体样式
+					 $("#usrName").css({backgroundColor:"red"});//设置文本框红色背景
+	                 $("#uerror").html(data);//输出内容
+	                 $("#usrName").focus();//获得焦点
+	                 return false;
+					}else{
+					 $("#uerror").css({color:"green"});//设置绿色字体
+	                 $("#uerror").html(data);
+	                 return true;//用户名唯一，返回真
+					}
+			    });
+			    //所有验证通过，清楚背景样式
+				$("#usrName").css({backgroundColor:""});
+			    //用户名唯一并且合法验证通过，返回真
+				return true;
+            });
+			
+			
+			//密码框失去焦点事件
+			$("#pwd").blur(function checkUpwd(){
+			   var password =$("#pwd").val();
+			   if(password==""){
+			        $("#pwderror").css({color:"red"});
+				    $("#pwd").css({backgroundColor:"red"});
+	                $("#pwderror").html("不能为空!");
+	                $("#pwd").focus();
+			        return false;
+			   }
+			   if(password.length <6){
+			        $("#pwderror").css({color:"red"});
+				    $("#pwd").css({backgroundColor:"red"});
+	                $("#pwderror").html("密码长度在6-12个字符内!");
+	                $("#pwd").focus();
+			        return false;
+			   }
+			   if(!reg.test(password)){
+				    $("#pwderror").css({color:"red"});
+				    $("#pwd").css({backgroundColor:"red"});
+	                $("#pwderror").html("不能包含特殊字符!");
+	                $("#pwd").focus();
+					return false;
+				}
+			   if(password.match(/\s/g, " ")){
+				    $("#pwderror").css({color:"red"});
+				    $("#pwd").css({backgroundColor:"red"});
+	                $("#pwderror").html("不能包含空格!");
+	                $("#pwd").focus();
+					return false;
+				}
+				$("#pwd").css({backgroundColor:""});
+				$("#pwderror").css({color:""});
+			    $("#pwderror").html("可为字母、数字!");
+			    return true;
+			});
+			
+			//角色下拉框值改变
+		     $("#role").change(function checkRole(){
+		        if($("#role").val()=="-1"){
+		           $("#roleerror").css({color:"red"});
+		           $("#roleerror").html("请选择角色!");
+		           $("#role").focus();
+		           $("#role").select();
+		           return false;
+		        }
+		         $("#roleerror").css({color:""});
+		         roleerror.innerHTML="<font color='#FF0000'>*</font>";
+				 return true;
+		     });
+		});	
+		</script>
+	</head>
+
+	<body>
+		<div class="page_title">
+			权限管理 &gt; 用户管理 &gt; 新建用户
+			<span id="remoteServerMessage"
+				style="background-color: #008040; color: #FFFFFF; margin-left: 6px;"></span>
+		</div>
+		<div class="button_bar">
+			<button class="common_button" onClick="help('')">
+				帮助
+			</button>
+			<button class="common_button" onClick="back()">
+				返回
+			</button>
+			<button class="common_button" id="btnSave">
+				保存
+			</button>
+		</div>
+		<form id="user_add_form" name="user_add_form" method="post">
+			<table class="query_form_table">
+				<tr>
+					<th>
+						编号
+					</th>
+					<td>
+						<input type="text" readonly="true" value="自动编号" size="20"
+							cssStyle="background-color:#D6D6D6" />
+						<span class="red_star">*</span>
+					</td>
+					<th>
+						用户名
+					</th>
+					<td>
+						<input type="text" id="usrName" maxlength="12"/>
+						<span class="red_star">*</span>	
+						<br/>
+						<span id="uerror">(可为字母、数字)</span>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						密码
+					</th>
+					<td>
+						<input type="password" id="pwd" size="22"
+							onselectstart="return false;" ondragenter="return false;"
+							onpaste="return false;" maxlength="12" onBlur="checkUpwd()" />
+						<span class="red_star" >*</span>
+						<br/>
+						<span id="pwderror">(可为字母、数字)</span>
+					</td>
+					<th>
+						注册时间
+					</th>
+					<td>
+						<input type="text" readonly="true" id="user_add"
+							cssStyle="background-color:#D6D6D6" />
+						<span class="red_star">*</span>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						用户角色
+					</th>
+					<td>
+						<select>
+                             <option>-----选择角色-----</option>
+							 <option>客户经理</option>
+							 <option>销售主管</option>
+							 <option>高管</option>
+						</select>
+						<span class="red_star" id="roleerror">*</span>
+					</td>
+					<th>
+						状态
+					</th>
+					<td>
+                          <input type="radio" />正常
+                          <input type="radio" />停用   
+					    <span class="red_star" id="flagerror">*</span>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						姓名
+					</th>
+					<td>
+						<input type="text" />
+						<span class="red_star">*</span>
+					</td>
+					<th>
+						联系电话
+					</th>
+					<td>
+						<input type="text"  />
+						<span class="red_star">*</span>	
+					</td>
+				</tr>
+				<tr>
+					<th>
+						所属部门
+					</th>
+					<td>
+						<select>
+                             <option>---请选择---</option>
+							 <option>市场一部</option>
+							 <option>市场二部</option>
+							 <option>市场三部</option>
+						</select>
+						<span class="red_star" id="roleerror">*</span>
+					</td>
+					<th>
+						职位
+					</th>
+					<td>
+                        <select>
+                             <option>---请选择---</option>
+							 <option>客户经理</option>
+							 <option>销售主管</option>
+							 <option>客服</option>
+						</select>
+						<span class="red_star" id="roleerror">*</span>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						性别
+					</th>
+					<td>
+					    <input type="radio" name="sex"/>男
+                        <input type="radio" name="sex"/>女  
+					    <span class="red_star" id="sexerror">*</span>
+					</td>
+					<th>&nbsp;
+						
+					</th>
+					<td>&nbsp;
+						
+					</td>
+				</tr>
+			</table>
+		</form>
+
+		<script type="text/javascript">
+		    //注册时间
+			setCurTime('user_add');
+		</script>
+	</body>
+</html>

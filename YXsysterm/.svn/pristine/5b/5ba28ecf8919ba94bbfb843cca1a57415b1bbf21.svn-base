@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/demo/demo.css">
+<script type="text/javascript" src="../script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../script/easyui/jquery.easyui.min.js"></script>
+<script src="../script/common.js"></script>
+</head>
+<body>
+
+<div class="page_title">客户开发计划</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="reload();">查询</button> 
+	<button class="common_button">
+				清空
+	</button>
+	</div>
+<table class="query_form_table">
+	<tr>
+		<th width="15%">客户名称</th>
+		<td width="18%"><input /></td>
+		<th width="15%">联系人</th>
+		<td width="23%"><input /></td>
+		<th width="11%">联系电话</th>
+		<td width="18%">
+			<input name="T1" size="20" />
+		</td>
+	</tr>
+	<tr>
+		<th>概要</th>
+		<td><input /></td>
+		<th>机会来源</th>
+		<td>
+		    <select>
+			   <option value="">---全部---</option>
+			   <option value="网络">网络</option>
+			   <option value="门店">门店</option>
+			   <option value="代理">代理</option>
+			</select>
+		</td>
+		<th>成功概率</th>
+		<td>
+			 <input class="easyui-numberspinner" style="width:80px;" 
+                    data-options="min:1,max:100,editable:true" />
+		</td>
+	</tr>
+	<tr>
+		<th>状态</th>
+		<td>
+		    <select>
+			   <option>---全部---</option>
+			   <option value="开发中">开发中</option>
+			   <option value="归档">归档</option>
+			</select>
+		</td>
+		<th>指派时间</th>
+		<td colspan="3">
+			<input class="easyui-datebox">
+			</input> 
+			&nbsp;至　
+			<input class="easyui-datebox"></input>
+		</td>
+	</tr>
+	</table>
+<br />
+<table class="data_list_table">
+	<tr>
+		<th>编号</th>
+		<th>客户名称</th>
+		<th>概要</th>
+		<th>联系人</th>
+		<th>联系人电话</th>
+		<th>指派时间</th>
+		<th>机会来源</th>
+		<th>状态</th>
+		<th>操作</th>
+	</tr>
+	<tr>
+		<td class="list_data_number">1</td>
+		<td class="list_data_text">睿智数码</td>
+		<td class="list_data_ltext">采购笔记本电脑意向</td>
+		<td class="list_data_text">刘先生</td>
+		<td class="list_data_text">13729239239</td>
+		<td class="list_data_text">2007年12月06日</td>
+		<td class="list_data_text">网络</td>
+		<td class="list_data_text">开发中</td>
+		<td class="list_data_op">
+			<img onClick="to('dev_plan.html');" title="制定计划" src="../images/bt_plan.gif" class="op_button" />
+			<img onClick="to('dev_execute.html');" title="执行计划" src="../images/bt_feedback.gif" class="op_button" />
+			<img onClick="alert('用户开发成功，已添加新客户记录。');" title="开发成功" src="../images/bt_yes.gif" class="op_button" />
+		</td>
+	</tr>
+	<tr>
+		<td class="list_data_number">2</td>
+		<td class="list_data_text">泰宝实业</td>
+		<td class="list_data_ltext">采购笔记本电脑意向</td>
+		<td class="list_data_text">马先生</td>
+		<td class="list_data_text">13333239239</td>
+		<td class="list_data_text">2007年11月16日</td>
+		<td class="list_data_text">网络</td>
+		<td class="list_data_text">已归档</td>
+		<td class="list_data_op">
+			<img onClick="to('dev_detail.html');" title="查看" src="../images/bt_detail.gif" class="op_button" />
+		</td>
+	</tr>
+	<tr>
+		<th colspan="11" class="pager">
+<div class="pager">
+	共59条记录&nbsp;每页10条&nbsp;
+	第1页&nbsp;/&nbsp;共5页&nbsp;
+	<a href="#">第一页</a>&nbsp;
+	<a href="#">上一页</a>&nbsp;
+	<a href="#">下一页</a>&nbsp;
+	<a href="#">最后一页</a>&nbsp;
+	转到<input value="1" size="2" />页&nbsp;
+	<button width="20">GO</button>
+</div>
+		</th>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../script/easyui/demo/demo.css">
+<script type="text/javascript" src="../script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../script/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../script/lhgDialog/lhgcore.lhgdialog.min.js"></script>
+<script src="../script/common.js"></script>
+</head>
+<body>
+<div class="page_title">绩效管理&nbsp; &gt; 公司绩效分析</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button">EXCEL导出</button>
+</div>
+<table class="query_form_table">
+	<tr>
+		<th>计划名称</th>
+		<td>2016年度销售计划</td>
+		<th>计划类型</th>
+		<td>
+		   年度计划	  
+		</td>
+	</tr>
+	<tr>
+		<th>计划执行时间</th>
+		<td colspan="3">
+		   2016-1-1&nbsp;至&nbsp;2016-12-31
+		</td>
+	</tr>		
+	<tr>
+		<th>计划新增客户量</th>
+		<td>
+		   500
+		</td>
+		<th>计划销售额（单位：万元）</th>
+		<td>
+		    800
+		</td>
+	</tr>
+</table>
+<br />
+<table class="query_form_table">
+	<tr>
+	    <th width="25%">本年度计划客户量</th>
+		<td width="9%">200</td>
+		<th width="15%">本年度已完成客户量</th>
+		<td width="18%">100</td>
+		<th width="15%">本年度已完成客户量比例</th>
+		<td width="18%">50%</td>
+	</tr>
+	<tr>
+	    <th>本年度计划销售额（单位：万元）</th>
+		<td>
+		    100
+		</td>
+		<th>本年度已完成销售额（单位：万元）</th>
+		<td>
+		    50
+		</td>
+		<th>本年度已完成销售额比例</th>
+		<td>50%</td>
+	</tr>
+</table>
+<br />
+<table class="query_form_table">
+	<tr>
+	    <th width="25%">本季度计划客户量</th>
+		<td width="8%">200</td>
+		<th width="25%">本季度已完成客户量</th>
+		<td width="8%">100</td>
+		<th width="25%">本季度已完成客户量比例</th>
+		<td width="9%">50%</td>
+	</tr>
+	<tr>
+	    <th>本季度计划销售额（单位：万元）</th>
+		<td>
+		    100
+		</td>
+		<th>本季度已完成销售额（单位：万元）</th>
+		<td>
+		    50
+		</td>
+		<th>本季度已完成销售额比例</th>
+		<td>50%</td>
+	</tr>
+</table>
+<br />
+<table class="query_form_table">
+	<tr>
+	    <th width="25%">本月度计划客户量</th>
+		<td width="8%">200</td>
+		<th width="25%">本月度已完成客户量</th>
+		<td width="8%">100</td>
+		<th width="25%">本月度已完成客户量比例</th>
+		<td width="9%">50%</td>
+	</tr>
+	<tr>
+	    <th>本月度计划销售额（单位：万元）</th>
+		<td>
+		    100
+		</td>
+		<th>本月度已完成销售额（单位：万元）</th>
+		<td>
+		    50
+		</td>
+		<th>本月度已完成销售额比例</th>
+		<td>50%</td>
+	</tr>
+</table>
+</body>
+</html>

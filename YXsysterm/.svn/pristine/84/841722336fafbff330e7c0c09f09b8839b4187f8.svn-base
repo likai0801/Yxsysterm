@@ -1,0 +1,140 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>客户关系管理系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../../script/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="../../script/easyui/demo/demo.css">
+<script type="text/javascript" src="../../script/easyui/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../../script/easyui/jquery.easyui.min.js"></script>
+<script src="../../script/common.js"></script>
+</head>
+<body>
+
+<div class="page_title">客户服务移交审批</div>
+<div class="button_bar">
+	<button class="common_button" onClick="help('');">帮助</button>
+	<button class="common_button" onClick="reload();">查询</button> 
+	<button class="common_button">
+				清空
+	</button>
+	<button class="common_button">批量审批</button> 
+	<button class="common_button">全部审批</button> 
+	</div>
+<table class="query_form_table">
+	<tr>
+		<th width="15%">提交人</th>
+		<td width="18%"><input /></td>
+		<th width="15%">状态</th>
+		<td width="23%">
+		    <select>
+			   <option value="">---全部---</option>
+			   <option value="待审核">待审核</option>
+			   <option value="审核通过">审核通过</option>
+			   <option value="审核退回">审核退回</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>提交时间</th>
+		<td colspan="3">
+		   <input class="easyui-datebox">
+		   &nbsp;至　
+		   <input class="easyui-datebox">
+		</td>
+	</tr>
+	</table>
+<br />
+<table class="data_list_table">
+	<tr>
+		<th width="6%">
+		   <input type="checkbox" id="selAll" />全选
+		</th>
+		<th width="6%">编号</th>
+		<th width="16%">客户名称</th>
+		<th width="10%">联系电话</th>
+		<th width="8%">概要</th>
+		<th width="10%">分配时间</th>
+		<th width="10%">服务类型</th>
+		<th width="9%">提交时间</th>
+		<th width="6%">提交人</th>
+		<th width="6%">状态</th>
+		<th width="13%">操作</th>
+	</tr>
+	<tr>
+		<td class="list_data_number"><input type="checkbox" name="sel" /></td>
+		<td class="list_data_number">1</td>
+		<td class="list_data_text">睿智数码</td>
+		<td class="list_data_ltext"><span class="list_data_text">13729239239</span></td>
+		<td class="list_data_text">咨询价格</td>
+		<td class="list_data_text">2007年10月06日</td>
+		<td class="list_data_text">咨询</td>
+		<td class="list_data_text">2007年12月06日</td>
+		<td class="list_data_text">张三</td>
+		<td class="list_data_text">待审核</td>
+		<td class="list_data_op">
+		    <input type="button" onClick="to('transfer_detail.html');" value="查看"  />
+			<input type="button" value="审核"  onClick="to('examine_oper.html');"/></td>
+	</tr>
+	<tr>
+		<td class="list_data_number"><input type="checkbox" name="sel" /></td>
+		<td class="list_data_number">2</td>
+		<td class="list_data_text">睿智数码</td>
+		<td class="list_data_ltext"><span class="list_data_text">13729239239</span></td>
+		<td class="list_data_text">咨询价格</td>
+		<td class="list_data_text">2007年10月06日</td>
+		<td class="list_data_text">投诉</td>
+		<td class="list_data_text">2007年12月06日</td>
+		<td class="list_data_text">李四</td>
+		<td class="list_data_text">审核通过</td>
+		<td class="list_data_op">
+		    <input type="button" onClick="to('transfer_detail.html');" value="查看"  /></td>
+	</tr>
+	<tr>
+		<td class="list_data_number"><input type="checkbox" name="sel" /></td>
+		<td class="list_data_number">3</td>
+		<td class="list_data_text">睿智数码</td>
+		<td class="list_data_ltext"><span class="list_data_text">13729239239</span></td>
+		<td class="list_data_text">咨询价格</td>
+		<td class="list_data_text">2007年10月06日</td>
+		<td class="list_data_text">咨询</td>
+		<td class="list_data_text">2007年12月06日</td>
+		<td class="list_data_text">王五</td>
+		<td class="list_data_text">审核退回</td>
+		<td class="list_data_op">
+		    <input type="button" onClick="to('transfer_detail.html');" value="查看"  /></td>
+	</tr>
+	<tr>
+		<td class="list_data_number"><input type="checkbox" name="sel" /></td>
+		<td class="list_data_number">4</td>
+		<td class="list_data_text">睿智数码</td>
+		<td class="list_data_ltext"><span class="list_data_text">13729239239</span></td>
+		<td class="list_data_text">咨询价格</td>
+		<td class="list_data_text">2007年10月06日</td>
+		<td class="list_data_text">咨询</td>
+		<td class="list_data_text">2007年12月06日</td>
+		<td class="list_data_text">赵六</td>
+		<td class="list_data_text">待审核</td>
+		<td class="list_data_op">
+		    <input type="button" onClick="to('transfer_detail.html');" value="查看"  />
+	    <input type="button" value="审核"  onClick="to('examine_oper.html');"/></td>
+	</tr>
+	<tr>
+		<th colspan="11" class="pager">
+<div class="pager">
+	共59条记录&nbsp;每页10条&nbsp;
+	第1页&nbsp;/&nbsp;共5页&nbsp;
+	<a href="#">第一页</a>&nbsp;
+	<a href="#">上一页</a>&nbsp;
+	<a href="#">下一页</a>&nbsp;
+	<a href="#">最后一页</a>&nbsp;
+	转到<input value="1" size="2" />页&nbsp;
+	<button width="20">GO</button>
+</div>
+		</th>
+	</tr>
+</table>
+</body>
+</html>

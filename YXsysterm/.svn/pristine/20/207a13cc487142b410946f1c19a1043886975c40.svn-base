@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="script/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="script/ztree/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="script/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript">
+		<!--
+		var setting = {	};
+
+		var zNodes =[
+			{ name:"客户关系管理系统", open:true,url:'welcome.html', target:'mainFrame',
+				children: [
+					{ name:"营销管理",
+						children: [
+							{ name:"销售机会管理",url:'sale/list.html', target:'mainFrame'},
+							{ name:"客户开发计划",url:'sale/dev.html', target:'mainFrame'},
+							{ name:"业务移交",url:'sale/transfer.html', target:'mainFrame'},
+							{ name:"移交审批",url:'sale/examine.html', target:'mainFrame'}
+					]},
+					{ name:"客户管理",
+						children: [
+							{ name:"客户信息管理",url:'cust/cust/list.html', target:'mainFrame'},
+							{ name:"订单信息查询",url:'cust/order/orders.html', target:'mainFrame'},
+							{ name:"客户流失管理",url:'cust/lost/list.html', target:'mainFrame'},
+							{ name:"业务移交",url:'cust/transfer/transfer.html', target:'mainFrame'},
+							{ name:"移交审批",url:'cust/transfer/examine.html', target:'mainFrame'}
+					]},
+					{ name:"服务管理",
+						children: [
+							{ name:"服务创建",url:'cust/service/add.html', target:'mainFrame'},
+							{ name:"服务分配",url:'cust/service/dispatch.html', target:'mainFrame'},
+							{ name:"服务处理",url:'cust/service/deal.html', target:'mainFrame'},
+							{ name:"服务反馈",url:'cust/service/feedback.html', target:'mainFrame'},
+							{ name:"服务归档",url:'cust/service/arch.html', target:'mainFrame'},
+							{ name:"业务移交",url:'cust/service/transfer.html', target:'mainFrame'},
+							{ name:"移交审批",url:'cust/service/examine.html', target:'mainFrame'}
+					]},
+					{ name:"绩效管理",
+						children: [
+							{ name:"绩效目标管理",url:'performance/performance_list.html ', target:'mainFrame'},
+							{ name:"公司绩效分析",url:'performance/global_rept.html ', target:'mainFrame'},
+					        { name:"员工绩效分析",url:'performance/emp_rept.html ', target:'mainFrame'},		
+							{ name:"绩效信息查询",url:'performance/query.html ', target:'mainFrame'}		
+					]},
+					{ name:"统计报表",
+						children: [
+							{ name:"客户贡献分析",url:'rept/contr.html', target:'mainFrame'},
+							{ name:"客户构成分析",url:'rept/cons.html', target:'mainFrame'},
+							{ name:"客户服务分析",url:'rept/ser.html', target:'mainFrame'},
+							{ name:"客户流失分析",url:'rept/lost.html', target:'mainFrame'},
+							{ name:"销售机会分析",url:'rept/sell.html', target:'mainFrame'}
+							
+					]},
+					{ name:"个人邮箱",
+						children: [
+							{ name:"发件箱",url:'mail/send_list.html', target:'mainFrame'},
+							{ name:"收件箱",url:'mail/receive_list.html', target:'mainFrame'},
+							{ name:"草稿箱",url:'mail/draft_list.html', target:'mainFrame'},
+							{ name:"回收站",url:'mail/recycle_list.html', target:'mainFrame'}
+					]},
+					{ name:"基础数据",
+						children: [
+							{ name:"数据字典管理",url:'basd/dict.html', target:'mainFrame'},
+							{ name:"文档共享管理",url:'basd/document.html', target:'mainFrame'},
+							{ name:"查询产品信息",url:'basd/product.html', target:'mainFrame'},
+							{ name:"查询库存",url:'basd/storage.html', target:'mainFrame'}
+					]},
+					{ name:"权限管理",
+						children: [
+							{ name:"角色管理",url:'role/role_list.html', target:'mainFrame'},
+							{ name:"用户管理",url:'user/user_list.html', target:'mainFrame'}
+					]},
+					{ name:"日志管理",
+						children: [
+							{ name:"登录日志管理",url:'log/login_log.html', target:'mainFrame'},
+							{ name:"操作日志管理",url:'log/oper_log.html', target:'mainFrame'}
+					]}
+					
+				]},
+		];
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		//-->
+</script>
+<title>无标题文档</title>
+</head>
+<body style="background-color:#CCF;">
+ <ul id="treeDemo" class="ztree"></ul>
+</body>
+</html>
